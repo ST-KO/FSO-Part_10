@@ -1,7 +1,7 @@
-import { View, StyleSheet, Pressable } from 'react-native';
-import Text from './Text';
+import { View, StyleSheet } from 'react-native';
 import Constants from 'expo-constants';
 import theme from '../theme';
+import AppBarTab from './AppBarTab';
 
 const styles = StyleSheet.create({
     container: {
@@ -13,12 +13,6 @@ const styles = StyleSheet.create({
         justifyContent: 'flex-end'
     }
 });
-
-const AppBarTab = () => (
-    <Pressable>
-        <Text fontSize="heading" fontWeight="bold" style={{color: "white"}}>Repositories</Text>
-    </Pressable>
-)
 
 const AppBar = () => {
   return (
