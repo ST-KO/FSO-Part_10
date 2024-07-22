@@ -21,13 +21,22 @@ const StatItem = ({ label, value }) => (
     </View>
 );
 
-const RepositoryStats = ({ repository }) => (
-    <View style={styles.container}>
-        <StatItem label="Stars" value={repository.stargazersCount} />
-        <StatItem label="Forks" value={repository.forksCount} />
-        <StatItem label="Reviews" value={repository.reviewCount} />
-        <StatItem label="Rating" value={repository.ratingAverage} />
-    </View>
-);
+const RepositoryStats = ({ repository }) => {
+    const formatCount = (count) => {
+        if(count >= 1000) {
+            return (count / 1000).toFixed(1) + 'k';
+        }
+        return count.toString();
+    }
+    
+    return (
+        <View style={styles.container}>
+            <StatItem label="Stars" value={formatCount(repository.stargazersCount)} />
+            <StatItem label="Forks" value={formatCount(repository.forksCount)} />
+            <StatItem label="Reviews" value={formatCount(repository.reviewCount)} />
+            <StatItem label="Rating" value={formatCount(repository.ratingAverage)} />
+        </View>
+    );
+};
 
 export default RepositoryStats;

@@ -1,11 +1,12 @@
 import { View, StyleSheet } from 'react-native';
 import { RepositoryAvatar, RepositoryDetails } from './RepositoryAvatar';
 import RepositoryStats from './RepositoryStats';
+import theme from '../theme';
 
 const styles = StyleSheet.create({
     container: {
         padding: 10, 
-        backgroundColor: 'white'
+        backgroundColor: theme.colors.white,
     },
     infoSection: {
         flexDirection: "row", 

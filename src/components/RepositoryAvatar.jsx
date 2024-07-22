@@ -1,5 +1,6 @@
 import { View, StyleSheet, Image } from 'react-native';
 import Text from './Text';
+import theme from '../theme';
 
 const styles = StyleSheet.create({
     avatar: {
@@ -8,6 +9,12 @@ const styles = StyleSheet.create({
     },
     info: {
         gap: 10,
+    },
+    language: {
+        backgroundColor: '#0366d6',
+        borderRadius: 5,
+        padding: 6,
+        alignSelf: 'flex-start',
     }
 });
 
@@ -23,7 +30,9 @@ const RepositoryDetails = ({ repository }) => (
         <Text color='textSecondary'>
             {repository.description}
         </Text>
-        <Text>{repository.language}</Text>
+        <View style={styles.language}>
+            <Text color='textWhite' fontWeight='bold'>{repository.language}</Text>
+        </View>
     </View>
 );
   
